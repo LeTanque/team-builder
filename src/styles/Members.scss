@@ -1,0 +1,39 @@
+
+
+.section--members {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: calc(100% - 20px);
+    .section--member-card {
+        background: linear-gradient(to right, #1c1e22, transparent);
+        padding: 10px 20px 20px 20px;
+        .section__block--member-card-title {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            color: white;
+            div.block--member-card-left {
+                text-align: left;
+            }
+            div.block--member-card-right {
+                text-align: right;
+            }
+            div {
+                display: flex;
+                flex-direction: column;
+                i {
+                    font-size: 1.6rem;
+                    margin-left: 20px;
+                }
+                .i--delete {
+                    color: lightcoral;
+                }
+                .i--edit {
+                    color: lightcyan;
+                }
+            }
+        }
+    }
+}
