@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import ReactWaterMark from 'react-watermark-component';
 import logo from './logo.svg';
 
 import Members from "./Members";
 import Form from "./Form";
-
 
 function App() {
   
@@ -49,33 +49,59 @@ function App() {
   };
 
 
+  const text = "© Frank Martinez";
+  // const beginAlarm = function() { console.log('start alarm'); };
+  const options = {
+    chunkWidth: 200,
+    chunkHeight: 60,
+    textAlign: 'left',
+    textBaseline: 'bottom',
+    globalAlpha: 0.09,
+    font: '14px Arial',
+    rotateAngle: -0.26,
+    fillStyle: '#ffffff'
+  }
+
+
+
+
   return (
     <section className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <code>Members Managment Application</code>
-        <h5>Features</h5>
-        <p>display members</p>
-        <p>add member</p>
-        <p>delete member</p>
-        <p>edit member</p>
-        <p>simple form validation</p>
-      </header>
+        <header className="App-header">
+          <ReactWaterMark
+            waterMarkText={text}
+            // openSecurityDefense
+            // securityAlarm={beginAlarm}
+            options={options}
+          >
+            <div>
+              <img src={logo} className="App-logo" alt="logo" />
+            </div>
+          </ReactWaterMark>
+          <code>Members Managment Application</code>
+          <h5>Features</h5>
+          <p>display members</p>
+          <p>add member</p>
+          <p>delete member</p>
+          <p>edit member</p>
+          <p>simple form validation</p>
+        </header>
 
-      <Form 
-        members={members}
-        setMembers={setMembers}
-        editMemberArray={editMemberArray}
-        setEditMemberArray={setEditMemberArray}
-      />
+        <Form 
+          members={members}
+          setMembers={setMembers}
+          editMemberArray={editMemberArray}
+          setEditMemberArray={setEditMemberArray}
+          />
 
-      <Members 
-        members={members}
-        removeMember={removeMember}
-        editMember={editMember}
-      />
+        <Members 
+          members={members}
+          removeMember={removeMember}
+          editMember={editMember}
+          />
 
-    </section>
+      </section>
+    
   );
 }
 
